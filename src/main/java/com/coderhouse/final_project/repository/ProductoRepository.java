@@ -1,7 +1,8 @@
 package com.coderhouse.final_project.repository;
 
 
-import com.coderhouse.final_project.model.Producto;
+
+import com.coderhouse.final_project.model.documents.Producto;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

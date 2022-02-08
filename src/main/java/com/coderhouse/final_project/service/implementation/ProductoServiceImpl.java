@@ -1,8 +1,9 @@
-package com.coderhouse.final_project.service;
+package com.coderhouse.final_project.service.implementation;
 
 
-import com.coderhouse.final_project.model.Producto;
+import com.coderhouse.final_project.model.documents.Producto;
 import com.coderhouse.final_project.repository.ProductoRepository;
+import com.coderhouse.final_project.service.ProductoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

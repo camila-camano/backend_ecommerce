@@ -1,6 +1,6 @@
 package com.coderhouse.final_project.service;
 
-import com.coderhouse.final_project.model.Producto;
+import com.coderhouse.final_project.model.documents.Producto;
 
 import java.util.List;
 

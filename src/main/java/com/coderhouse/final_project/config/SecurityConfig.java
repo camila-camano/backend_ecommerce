@@ -23,6 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterAfter(new JwtTokenFilter(properties), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/coderhouse/user/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/coderhouse/user/register").permitAll()
                 .anyRequest().authenticated();
     }
 

@@ -1,4 +1,4 @@
-package com.coderhouse.final_project.model;
+package com.coderhouse.final_project.model.documents;
 
 
 import lombok.AllArgsConstructor;
