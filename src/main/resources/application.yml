@@ -7,3 +7,7 @@ spring:
       port: 27017
 server:
   port: 8082
+
+jwt:
+  expiration: 60000
+  secret: springbootjwtcoderhouse
