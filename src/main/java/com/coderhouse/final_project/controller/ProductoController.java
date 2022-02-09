@@ -25,7 +25,7 @@ public class ProductoController {
     }
 
     //Gets
-    @GetMapping("getbyid")
+    @GetMapping("/getbyid")
     public Producto getProducto(@RequestParam int code){
         log.info("GET BY ID request recibido. Producto de código: " + code);
         return service.getByCode(code);
