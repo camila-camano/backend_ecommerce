@@ -72,6 +72,7 @@ public class CarritoServiceImpl implements CarritoService {
         for( CodeStock cs : productos){
             if (Objects.equals(cs.getCode(), code)){
                 cs.setStock(stock);
+                repository.save(carrito);
                 return ("El producto " + code + " ha sido modificado, nuevo stock a comprar:" + stock);
             }
         }

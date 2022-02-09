@@ -30,5 +30,10 @@ public class CarritoController {
         return service.viewCart(email);
     }
 
+    @PutMapping("/")
+    public String updateStock(@RequestParam String email, @RequestParam int code, @RequestParam int stock){
+        log.info("Modificando stock de un producto.");
+        return service.updateCart(email, code, stock);
+    }
 
 }
