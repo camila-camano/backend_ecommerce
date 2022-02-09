@@ -36,4 +36,10 @@ public class CarritoController {
         return service.updateCart(email, code, stock);
     }
 
+    @DeleteMapping("/")
+    public String deleteProduct(@RequestParam String email, @RequestParam int code){
+        log.info("Eliminado un producto del carrito.");
+        return service.deleteFromCart(email, code);
+    }
+
 }

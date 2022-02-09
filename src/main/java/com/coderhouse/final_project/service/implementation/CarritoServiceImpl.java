@@ -83,8 +83,20 @@ public class CarritoServiceImpl implements CarritoService {
 
     //delete
     @Override
-    public String deleteFromCart(int code, int stock) {
-        return null;
+    public String deleteFromCart(String email, int code) {
+
+        var carrito = repository.findByEmail(email);
+        var productos = carrito.getProducts();
+
+        for( CodeStock cs : productos){
+            if (Objects.equals(cs.getCode(), code)){
+                productos.remove(cs);
+                repository.save(carrito);
+                return ("El producto " + code + " ha sido eliminado.");
+            }
+        }
+
+        return "El ID no existe en el carrito.";
     }
 
 }

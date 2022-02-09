@@ -15,6 +15,6 @@ public interface CarritoService {
 
     String updateCart(String email, int code, int stock);
 
-    String deleteFromCart(int code, int stock);
+    String deleteFromCart(String email, int code);
 
 }
