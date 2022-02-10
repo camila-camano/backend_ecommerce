@@ -3,6 +3,7 @@ package com.coderhouse.final_project.service.implementation;
 import com.coderhouse.final_project.model.documents.Orden;
 import com.coderhouse.final_project.repository.CarritoRepository;
 import com.coderhouse.final_project.repository.OrdenRepository;
+import com.coderhouse.final_project.service.EmailService;
 import com.coderhouse.final_project.service.OrdenService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,6 +26,9 @@ public class OrdenServiceImpl implements OrdenService {
     private CarritoRepository carritoRepository;
 
     @Autowired
+    private EmailService emailService;
+
+    @Autowired
     private MongoTemplate template;
 
     public String createOrder(String email){
@@ -41,7 +45,9 @@ public class OrdenServiceImpl implements OrdenService {
         //limpiar carrito del usuario
         ordenRepository.save(orden);
 
-        return "Orden generada con éxito. ";
+        emailService.sendEmail(orden);
+
+        return "Orden generada con éxito. Chequear mail para ver la confirmación. ";
 
     }
 
