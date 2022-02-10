@@ -18,7 +18,7 @@ public class CarritoController {
     @Autowired
     CarritoService service;
 
-    @PutMapping("/add")
+    @PostMapping("/add")
     public List<CodeStock> addToCart(@RequestParam String email, @RequestParam int code, @RequestParam int stock){
         log.info("Agregando al carrito de {} el producto de código {} con stock a comprar {}.", email, code, stock);
         return service.addToCart(email, code, stock);
