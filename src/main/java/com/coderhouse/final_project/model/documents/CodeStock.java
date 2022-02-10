@@ -5,9 +5,16 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@ToString
 @AllArgsConstructor
 public class CodeStock {
+
     private int code;
     private int stock;
+
+    @Override
+    public String toString() {
+        return
+                "Código del producto: " + code +
+                ", stock a comprar: " + stock ;
+    }
 }

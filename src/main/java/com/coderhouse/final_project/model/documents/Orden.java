@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-@ToString
 @AllArgsConstructor
 public class Orden {
 
@@ -24,4 +23,14 @@ public class Orden {
     private Date createDate;
     private String email;
     private String status;
+
+    @Override
+    public String toString() {
+        return "ORDEN GENERADA: " + "\n" +
+                " - Número de orden: " + orderNumber + "\n" +
+                " - Productos y stock: " + productos + "\n" +
+                " - Fecha de creación: " + createDate + "\n" +
+                " - Email del usuario: " + email + "\n" +
+                "Gracias por su compra!";
+    }
 }

@@ -20,7 +20,7 @@ public class EmailServiceImpl  implements EmailService {
         message.setTo("coderhouse.camila26@gmail.com");
 
         message.setSubject("Orden generada n°: " + orden.getOrderNumber());
-        message.setText("La orden generada es la siguiente:" + orden.toString());
+        message.setText("La orden generada es la siguiente: " + "\n" + orden.toString());
 
         javaMailSender.send(message);
     }
