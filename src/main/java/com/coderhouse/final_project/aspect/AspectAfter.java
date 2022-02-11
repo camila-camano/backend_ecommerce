@@ -13,6 +13,6 @@ public class AspectAfter {
 
     @After("execution(* com.coderhouse.final_project.controller.*.*(..))")
     void afterAdviceMethod() {
-        log.info("After Aspect ejecutado. Request finalizado. ");
+        log.info("After Aspect ejecutado. Request finalizada. ");
     }
 }

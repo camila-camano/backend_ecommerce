@@ -20,6 +20,7 @@ public class Orden {
 
     private Long orderNumber;
     List<CodeStock> productos;
+    private int totalPrice;
     private Date createDate;
     private String email;
     private String status;
@@ -29,6 +30,7 @@ public class Orden {
         return "ORDEN GENERADA: " + "\n" +
                 " - Número de orden: " + orderNumber + "\n" +
                 " - Productos y stock: " + productos + "\n" +
+                " - Precio final: $" + totalPrice + "\n" +
                 " - Fecha de creación: " + createDate + "\n" +
                 " - Email del usuario: " + email + "\n" +
                 "Gracias por su compra!";

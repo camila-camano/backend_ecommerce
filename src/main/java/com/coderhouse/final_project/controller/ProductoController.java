@@ -53,7 +53,7 @@ public class ProductoController {
     @PutMapping("/put/price")
     public void updatePrice(@RequestParam int code, int price){
         log.info("PUT STOCK request recibido. Producto de código: {} con nuevo precio {}", code, price);
-        service.updateStockOf(code,price);
+        service.updatePriceOf(code,price);
     }
 
 
