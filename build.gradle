@@ -14,6 +14,10 @@ configurations {
 	}
 }
 
+ext {
+	set('springCloudVersion', "2021.0.0")
+}
+
 repositories {
 	mavenCentral()
 }
@@ -60,7 +64,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 
 
-
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 
@@ -68,4 +71,11 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
