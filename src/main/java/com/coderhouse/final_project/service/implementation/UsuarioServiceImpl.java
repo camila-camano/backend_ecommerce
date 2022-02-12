@@ -42,7 +42,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         if(user == null){
             throw new ApiRestTokenException("El usuario no existe.");
         }
-        if (!(user.getEmail().equals(email) && user.getPwd().equals(pwd))) {
+        if (!(user.getEmail().equals(email) && passwordEncoder.matches(pwd,user.getPwd()) )) {
             throw new ApiRestTokenException("El usuario o el password es inválido.");
         }
        var token = jwtProvider.getJWTToken(email);
