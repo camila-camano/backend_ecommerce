@@ -7,4 +7,5 @@
 #### _Carpeta Extra_
 - En la carpeta __EXTRA__ hay:
   - Screenshots de la base de datos en MongoDB,
+  - Screenshot de las órdenes enviadas al mail, 
   - Un archivo _.json_ con los comandos de Postman que fueron utilizados para testear el proyecto. Hay un request para cada método de los controllers. Puede ser importado a Postman.
