@@ -9,6 +9,7 @@ import com.coderhouse.final_project.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     private final UsuarioRepository repository;
     private final JwtProvider jwtProvider;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     private MongoTemplate template;
@@ -28,6 +30,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario createUser(String email, String pwd) throws Exception{
         Usuario user = Usuario.builder().email(email).pwd(pwd).build();
+        user.setPwd(passwordEncoder.encode(user.getPwd()));
         return repository.save(user);
     }
 
