@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "974c1564-6773-4cf9-9c2d-f19ff45a0d48",
+		"name": "final_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/productos/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"productos",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": 1,\n    \"name\": \"papa\",\n    \"category\": \"verduras\",\n    \"description\": \"Papa de la mejor calidad.\",\n    \"price\": 20,\n    \"stock\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/coderhouse/productos/post",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"productos",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update stock",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/productos/put/stock?code=1&stock=110",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"productos",
+								"put",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "1"
+								},
+								{
+									"key": "stock",
+									"value": "110"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "update price",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "get by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "delete by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlQGxpdmUuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY0NDU0MDUwNywiZXhwIjoxNjQ0NTQxMTA3fQ.hi4I4_-w8m7UWKblWuNynO6nnCccjGK9bVEBBHYpoH7NBxHjnfCxBpgG1wFiVsRyAHnDnSKQfkW_r091LNz_ow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/productos/delete?code=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"productos",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/user/login?email=pepe@live.com&pwd=123",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "pepe@live.com"
+								},
+								{
+									"key": "pwd",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "carrito",
+			"item": [
+				{
+					"name": "view cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/carrito/view?email",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"carrito",
+								"view"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create/add to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/carrito/add?email=pepe@live.com&code=2&stock=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"carrito",
+								"add"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "pepe@live.com"
+								},
+								{
+									"key": "code",
+									"value": "2"
+								},
+								{
+									"key": "stock",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change stock",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/carrito/view?email=pepe@live.com&code=3&stock=40",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"carrito",
+								"view"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "pepe@live.com"
+								},
+								{
+									"key": "code",
+									"value": "3"
+								},
+								{
+									"key": "stock",
+									"value": "40"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlQGxpdmUuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY0NDQyMTkzOCwiZXhwIjoxNjQ0NDIyNTM4fQ.WEbr79lyJO1CS7LSa31zXye0Cir4YZmsdC-i5oRyPxgnaLYkw2ms6zgnoWO0bEbre0P0YttvtsxbhtMDM3Ijgw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/carrito/?email=pepe@live.com&code=5",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"carrito",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "pepe@live.com"
+								},
+								{
+									"key": "code",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "generate order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwZXBlQGxpdmUuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY0NDUwNDYwMCwiZXhwIjoxNjQ0NTA1MjAwfQ.ZPzQ4pxF4AnYw3DQ_WQlF-n_H7trQMciKfERpd-wh6-un1Iy-x3ezx7GdAyaXUEutZkb6baeYePdo5t6T9cJKA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/coderhouse/carrito/order?email=pepe@live.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"coderhouse",
+								"carrito",
+								"order"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "pepe@live.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

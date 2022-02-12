@@ -1,9 +1,9 @@
 spring:
   application:
-    name: message-v2
+    name: final_properties
   cloud:
     config:
-      uri: http://localhost:8082
+      uri: http://localhost:8888
   profiles:
     active: dev
 
